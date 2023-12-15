@@ -20,9 +20,9 @@ const Pilihan = ({ label, datas, width, height, fontSize, selectedValue, onValue
               </SelectDragIndicatorWrapper>
               <SelectItem label="Progress" value="progress" />
               <SelectItem label="Done" value="done" />
-              </SelectContent>
+            </SelectContent>
           </SelectPortal>
-        </Select>
+          </Select>
       </>
     );
   } else if (label === "Category") {
@@ -41,9 +41,9 @@ const Pilihan = ({ label, datas, width, height, fontSize, selectedValue, onValue
               <SelectDragIndicatorWrapper borderWidth={"$1"} borderRadius={"$sm"}>
                 <SelectDragIndicator />
               </SelectDragIndicatorWrapper>
-              <SelectItem label={"Dummy"} value={null} />
-              <SelectItem label={"Dummy"} value={null} />
-              <SelectItem label={"Dummy"} value={null} />
+              {datas.map((data, index) => (
+                <SelectItem key={index} label={data} value={data} />
+              ))}
             </SelectContent>
           </SelectPortal>
         </Select>
